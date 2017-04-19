@@ -1,0 +1,15 @@
+
+/* centering modal horizontally and vertically */
+.vertical-alignment-helper {
+    display: table;
+    height:90%;
+
+}
+.vertical-align-center {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+#user-error-dialog .modal-body label.font-color {
+    color: #333;
+}
