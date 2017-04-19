@@ -1,0 +1,65 @@
+
+/* form controls of new category dialog */
+.new-brand-txt {
+	font-size: 13px;
+	height: 29px;
+	padding-left: 9px;
+	padding-right: 9px;
+	margin-bottom: 5px;
+}
+.new-brand-label {
+	font-weight: bold;
+	text-align: left;
+	margin-bottom: 5px;
+	width: 100%;
+}
+#new-brand-dialog .modal-body button {
+	background-color: #2f96b4;
+}
+#new-brand-dialog .modal-body button:hover, 
+#new-brand-dialog .modal-body button:focus {
+	background-color: #0b85a9;
+}
+#new-brand-dialog span.brand-error {
+	color: red;
+	font-family: Cambria;
+	font-size: 11.7px;
+}
+
+/* form-controls of update category dialog */
+.update-brand-txt {
+	font-size: 13px;
+	height: 29px;
+	padding-left: 9px;
+	padding-right: 9px;
+	margin-bottom: 5px;
+}
+.update-brand-label {
+	font-weight: bold;
+	text-align: left;
+	margin-bottom: 5px;
+	width: 100%;
+}
+#update-brand-dialog .modal-body button {
+	background-color: #2f96b4;
+}
+#update-brand-dialog .modal-body button:hover,
+#update-brand-dialog .modal-body button:focus {
+	background-color: #0b85a9;
+}
+#update-brand-dialog span.brand-error {
+	color: red;
+	font-family: Cambria;
+	font-size: 11.7px;
+}
+
+/* centering modal horizontally and vertically */
+.vertical-alignment-helper {
+    display: table;
+    height:90%;
+
+}
+.vertical-align-center {
+    display:table-cell;
+    vertical-align:middle;
+}
