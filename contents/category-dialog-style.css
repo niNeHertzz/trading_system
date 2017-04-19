@@ -1,0 +1,67 @@
+
+/* form controls of new category dialog */
+.new-category-txt {
+	font-size: 13px;
+	height: 29px;
+	padding-left: 9px;
+	padding-right: 9px;
+	margin-bottom: 5px;
+}
+.new-category-label {
+	font-weight: bold;
+	text-align: left;
+	margin-bottom: 5px;
+	width: 100%;
+}
+#new-category-dialog .modal-body button {
+	/*background-color: #7a1e1e;*/
+	background-color: #2f96b4;
+}
+#new-category-dialog .modal-body button:hover, 
+#new-category-dialog .modal-body button:focus {
+	/*background-color: #670101;*/
+	background-color: #0b85a9;
+}
+#new-category-dialog span.category-error {
+	color: red;
+	font-family: Cambria;
+	font-size: 11.7px;
+}
+
+/* form-controls of update category dialog */
+.update-category-txt {
+	font-size: 13px;
+	height: 29px;
+	padding-left: 9px;
+	padding-right: 9px;
+	margin-bottom: 5px;
+}
+.update-category-label {
+	font-weight: bold;
+	text-align: left;
+	margin-bottom: 5px;
+	width: 100%;
+}
+#update-category-dialog .modal-body button {
+	background-color: #2f96b4;
+}
+#update-category-dialog .modal-body button:hover,
+#update-category-dialog .modal-body button:focus {
+	background-color: #0b85a9;
+}
+
+#update-category-dialog span.category-error {
+	color: red;
+	font-family: Cambria;
+	font-size: 11.7px;
+}
+/* centering modal horizontally and vertically */
+.vertical-alignment-helper {
+    display: table;
+    height:90%;
+
+}
+.vertical-align-center {
+    display:table-cell;
+    vertical-align:middle;
+}

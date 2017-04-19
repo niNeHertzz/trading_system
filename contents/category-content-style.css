@@ -1,0 +1,59 @@
+
+.category-contents .panel {
+	/*border: none;
+	box-shadow: none;*/
+}
+.category-contents .panel .panel-heading {
+	background: #fafafa;
+/*	text-transform: uppercase;*/
+	font-size: 13px;
+	font-weight: 400;
+}
+.category-contents .panel .panel-heading h4 {  
+	font-size: 19px;
+}
+
+#category-table_length {
+	padding: 15px 0;
+}
+#category-table_length select {
+	padding: 5px 8px;
+	font-size: 14px;
+}
+#category-table_filter {
+	margin-left: 45px;
+	padding: 15px 0;
+	width: 80%;
+}
+
+#category-table_filter label input {
+	width: 100%;
+}
+
+#category-table {
+	margin-top: 0px !important;
+}
+.category-contents .panel-body #category-add-btn {
+	background-color: #1a588e;
+	border-color: #1a588e;
+	border-radius: 3px;
+}
+.category-contents .panel-body #category-add-btn:hover,
+.category-contents .panel-body #category-add-btn:focus {
+	background-color: #1563a5;
+	border-color: #1563a5;
+	border-radius: 3px;
+}
+#category-table tbody tr button {
+	background-color: #056605;
+	border-color: #056605;
+	border-radius: 5px;
+}
+#category-table tbody tr button:hover,
+#category-table tbody tr button:focus {
+	background-color: #2c6c2c;
+	border-color: #2c6c2c;
+}
+#category-table tbody tr td:last-child button {
+	margin-left: 20px;
+}
