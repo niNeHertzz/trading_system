@@ -1,0 +1,188 @@
+﻿/*body {
+    padding-top:175px;
+    
+}*/*{
+    margin: 0;
+    padding: 0;
+}
+/*-ms-@viewport {
+    width: device-height;
+    initial-scale: 1;
+    zoom: 1;
+    min-zoom: 1;
+    max-zoom: 3;
+    user-zoom: fixed;
+}*/
+
+.transpa-body {
+    /*background: rgba(40, 57, 101, 0.9) none repeat scroll 0 0;*/
+    background: url("images/simkimban-bg-4.png") no-repeat scroll 0 0;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 110% 100%;
+    width: 100%;
+    /* height:100%; */
+    padding-bottom: 170px;
+}
+/*@media (min-width:992px) and (max-width: 1199px) {
+
+}*/
+/* small phones */
+@media(min-width: 320px) and (max-width: 479px) {
+
+    .login-panel {
+
+        /*for centering horizontally */
+        margin: auto;
+        /* for centering vertically */
+        padding: 20% 1% 0;
+        width: 310px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .login-panel {
+
+        /*for centering horizontally */
+        margin: auto;
+        /* for centering vertically */
+        padding: 10.5% 1% 0;
+        width: 340px;
+    }
+}
+/* tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .login-panel {
+
+        /*for centering horizontally */
+        margin: auto;
+        /* for centering vertically */
+        padding: 10.5% 1% 0;
+        width: 340px;
+    }
+}
+/* medium desktop */
+@media (min-width: 992px) and (max-width: 1199px){
+    .login-panel {
+
+        /*for centering horizontally */
+        margin: auto;
+        /* for centering vertically */
+        padding: 13.5% 1% 0;
+        width: 360px;
+    }
+}
+/* large desktops */
+@media (min-width: 1200px) {
+    .login-panel {
+
+        /*for centering horizontally */
+        margin: auto;
+        /* for centering vertically */
+        padding: 10.5% 1% 0;
+        width: 360px;
+    }
+
+}
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .login-panel-body {
+        background: transparent;
+        box-shadow:  0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); 
+        /* for centering */
+        /* for centering vertically */
+        max-width: 200px;
+        padding-bottom: 33px;
+        position: relative;
+        text-align: center;
+        border-radius: 5px;
+        /*for centering horizontally */
+        /*margin: auto;
+        right: 0;   
+        left: 0;*/
+        /*width: 360px;*/
+    }
+}
+.login-panel-body {
+    background: transparent;
+    box-shadow:  0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); 
+    /* for centering */
+    /* for centering vertically */
+    max-width: 330px;
+    padding-bottom: 33px;
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+    /*for centering horizontally */
+    /*margin: auto;
+    right: 0;   
+    left: 0;*/
+    /*width: 360px;*/
+}
+.login-heading {
+    
+    color: #b20707;
+    font-family: 'Cooper Black';
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px; 
+    
+    background-color: transparent;/*#195ca1;*//*#6f7e95;*/
+    padding-top: 10px;
+    padding-bottom: 7px;
+    width: 330px; 
+    
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; 
+}
+
+
+.login-body {
+    padding-left: 32px;
+    padding-right: 32px;
+    text-align: center;
+}
+.login-body input {
+    background: #f2f2f2;
+    font-family: Cambria;
+    font-size: 14px;
+    height: 50px;
+    border-radius: 0px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 30px;
+}
+.login-body input:focus {
+    border-color: #aaa;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(170, 170, 170, .6);
+}
+.login-body button {
+    margin-top: 15px;
+    color: #fff;
+    border-radius: 0;
+    padding: 15px;
+    text-transform:uppercase;
+    height: 50px;
+    width: 100%;
+    border-radius: 30px;
+}
+.tooltip-inner {
+    background-color: #8b0300;
+    width:200px;
+    font-size: 13px;
+    padding: 15px 5px;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, 0.75), 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+.tooltip.right .tooltip-arrow {
+    border-right: 5px solid #8b0300;
+}
+
+/*unpw error*/
+div form span {
+    color: #b20707;
+}
+
