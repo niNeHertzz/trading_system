@@ -77,7 +77,7 @@
 			$mysqli->close();
 		}
 
-		// update category function
+		// update brand function
 		public function updateBrand() {
 			require("../connect_db.php");
 			$brandid = $mysqli->real_escape_string($_POST['brandid']);
