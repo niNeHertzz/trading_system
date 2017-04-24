@@ -40,8 +40,6 @@ $(document).ready(function() {
 						// handle spacing issue(one space or more than one space) 
 						// when checking if existing or not
 						var word = $("input[name='categorytxt']").val().split(" ");
-						alert(word);
-						alert(word.length);
 						var categorytxt_val = "";
 						var word_counter = 0;
 						for(count = 0;count < word.length;count++)
@@ -246,7 +244,6 @@ function updateCategoryModal(id)
 						}
 						if (categorytxt_val == "")
 						{
-							alert("g");
 							$("#update-category-dialog span.category-error").remove();
 							$("#update-category-dialog-wrapper #update-category-dialog input[name='categorytxt']").
 							after("<span class=\"category-error\"></span>");
