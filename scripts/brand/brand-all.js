@@ -37,8 +37,6 @@ $(document).ready(function() {
 						// handle spacing issue(one space or more than one space) 
 						// when checking if existing or not
 						var word = $("input[name='brandtxt']").val().split(" ");
-						alert(word);
-						alert(word.length);
 						var brandtxt_val = "";
 						var word_counter = 0;
 						for(count = 0;count < word.length;count++)
@@ -223,7 +221,6 @@ function updateBrandModal(id){
 						}
 						if (brandtxt_val == "")
 						{
-							alert("g");
 							$("#update-brand-dialog span.brand-error").remove();
 							$("#update-brand-dialog-wrapper #update-brand-dialog input[name='brandtxt']").
 							after("<span class=\"brand-error\"></span>");
