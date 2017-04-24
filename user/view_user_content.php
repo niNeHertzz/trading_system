@@ -48,7 +48,41 @@
 				<tbody>
 					<?php
 						$user = new User();
-						$user->getUserAll();
+						//$user->getUserAll();
+						$array_output = json_decode($user->getUserAll());
+						foreach($array_output as $user_data)
+						{
+							echo "<tr>";
+							echo "<td>".
+							 	 	"<input type='checkbox'". 
+									"name='check_". $user_data->Username. "'". "/>".
+								 "</td>";
+							echo "<td>".
+								 	$user_data->Username. 
+								 "</td>";
+							echo "<td>".
+									$user_data->LastName. ", ". $user_data->FirstName. " ". $user_data->MiddleName. 
+								 "</td>";
+							echo "<td>".
+									$user_data->Address. 
+								 "</td>";
+							echo "<td>".
+									$user_data->BirthDate. 
+								 "</td>";
+							echo "<td>".
+									$user_data->ContactNo. 
+								 "</td>";
+							echo "<td>".
+								 "<form id='update-usr-frm' method='post' action='/user/update-user.php'>".
+								 	"<button type='button'". "id='". $user_data->Username . 
+								 	"' name='Update'". "value=''". 
+						 		 	"class='btn btn-success'>".
+										"Update".
+									"</button>".
+								 "</form>".
+								 "</td>";
+							echo "</tr>";
+						}
 					?>
 				</tbody>
 			</table>
@@ -60,6 +94,7 @@
 <link rel="stylesheet" type="text/css" href="/contents/user-dialog-style.css" />
 <script type="text/javascript" src="/contents/dataTables/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="/contents/dataTables/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="/scripts/user/user-all.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#user-table").DataTable({
@@ -82,4 +117,3 @@
 		$(".user-table-panel").css("height", usertblscroll_height);
 	});
 </script>
-<script type="text/javascript" src="/scripts/user/user-all.js"></script>

@@ -14,9 +14,8 @@
 	<link rel="stylesheet" type="text/css" href="/contents/font-awesome-4.7.0/css/font-awesome.min.css" />
 	<script type="text/javascript" src="/scripts/homepage/sidebar-content-display.js"></script>
 	<link rel="stylesheet" type="text/css" href="/contents/main-content-style.css" />
-	<link rel="stylesheet" type="text/css" href="/contents/view-user-content-style.css" />
-	<link rel="stylesheet" type="text/css" href="/contents/bootstrap-datepicker-1.6.4/css/bootstrap-datepicker3.min.css" />
-	<script type="text/javascript" src="/contents/bootstrap-datepicker-1.6.4/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/contents/update-user-content-style.css" />
+	
 </head>
 <body style="position: relative;z-index: -7">
 <div id="page-container" style="position: relative;z-index: inherit;">
@@ -172,7 +171,7 @@
 		<!-- </div> -->
 	</div>
 	<div class="main-content" style="position: relative;z-index: -5">
-		<?php require_once('/view_user_content.php'); ?>
+		<?php require_once('/update_user_content.php'); ?>
 	</div>
 </div>
 <script type="text/javascript">

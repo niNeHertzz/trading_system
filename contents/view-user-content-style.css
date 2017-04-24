@@ -4,13 +4,17 @@
 	box-shadow: none;*/
 }
 .view-user-contents .panel .panel-heading {
-	background: #fafafa;
-/*	text-transform: uppercase;*/
+	/* updated bg since 04-20-17 */
+	background: #c1c0c0; /*#cdcdcd;*//*#fafafa;*/
 	font-size: 13px;
 	font-weight: 400;
 }
 .view-user-contents .panel .panel-heading h4 {  
 	font-size: 19px;
+	/* added since 04-20-17 */
+	color: #474646;/*#303030;*/ /*#212121;*/ /*#767676;*/
+	font-family: calibri;
+	font-weight: bold;
 }
 
 #user-table_length {

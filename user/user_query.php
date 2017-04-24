@@ -15,37 +15,40 @@
 			{
 				while($row = $result->fetch_assoc())
 				{
-					echo "<tr>".
-						 	"<td>".
-						 		"<input type=\"checkbox\"". "name=\"check_". $row["UserId"]. "\"". "/>".
-						 	"</td>".
-						 	"<td>".
-						 		$row["Username"].
-						 	"</td>".
-						 	"<td>".
-						 		$row["LastName"]. ", ". $row["FirstName"]. " ". $row["MiddleName"].
-						 	"</td>".
-						 	"<td>".
-						 		$row["Address"].
-						 	"</td>".
-						 	"<td>".
-						 		$row["BirthDate"].
-						 	"</td>".
-						 	"<td>".
-						 		$row["ContactNo"].
-						 	"</td>".
-						 	"<td>".
-						 		"<button type=\"button\"". "id=\"". $row["UserId"] . "\" name=\"Update\"". "value=\"\"". 
-						 		"class=\"btn btn-success\"". "onclick=\"updateUserModal(". $row["UserId"] .")\">".
-									"Update".
-								"</button>".
-							"</td>".
-						 "</tr>";	
+					$output[] = $row;
+					// echo "<tr>".
+					// 	 	"<td>".
+					// 	 		"<input type=\"checkbox\"". "name=\"check_". $row["UserId"]. "\"". "/>".
+					// 	 	"</td>".
+					// 	 	"<td>".
+					// 	 		$row["Username"].
+					// 	 	"</td>".
+					// 	 	"<td>".
+					// 	 		$row["LastName"]. ", ". $row["FirstName"]. " ". $row["MiddleName"].
+					// 	 	"</td>".
+					// 	 	"<td>".
+					// 	 		$row["Address"].
+					// 	 	"</td>".
+					// 	 	"<td>".
+					// 	 		$row["BirthDate"].
+					// 	 	"</td>".
+					// 	 	"<td>".
+					// 	 		$row["ContactNo"].
+					// 	 	"</td>".
+					// 	 	"<td>".
+					// 	 		"<button type=\"button\"". "id=\"". $row["UserId"] . "\" name=\"Update\"". "value=\"\"". 
+					// 	 		"class=\"btn btn-success\"". "onclick=\"updateUserModal(". $row["UserId"] .")\">".
+					// 				"Update".
+					// 			"</button>".
+					// 		"</td>".
+					// 	 "</tr>";	
 				}
 			}
 			//echo $result->num_rows;
 			$result->free();
 			$mysqli->close();
+			$user_data = json_encode($output);
+			return $user_data;
 		}
 
 		// insert user function

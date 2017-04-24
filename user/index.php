@@ -14,9 +14,8 @@
 	<link rel="stylesheet" type="text/css" href="/contents/font-awesome-4.7.0/css/font-awesome.min.css" />
 	<script type="text/javascript" src="/scripts/homepage/sidebar-content-display.js"></script>
 	<link rel="stylesheet" type="text/css" href="/contents/main-content-style.css" />
-	<link rel="stylesheet" type="text/css" href="/contents/view-user-content-style.css" />
-	<link rel="stylesheet" type="text/css" href="/contents/bootstrap-datepicker-1.6.4/css/bootstrap-datepicker3.min.css" />
-	<script type="text/javascript" src="/contents/bootstrap-datepicker-1.6.4/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/contents/category-content-style.css" />
+	
 </head>
 <body style="position: relative;z-index: -7">
 <div id="page-container" style="position: relative;z-index: inherit;">
@@ -67,15 +66,15 @@
 			<ul class="sidebar-menu" style="height: inherit">
 				<li>
 					<a href="#">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Dashboard</span>
 					</a>
 				</li>
 				<li>
 					<a class="sidebar-nav-menu" href="#">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Supplier</span>
 						<span class="glyphicon glyphicon-menu-right collapse-icon"></span>
 					</a>
@@ -86,7 +85,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/supplier/view-supplier.php" id="view-supplier">
+							<a href="#">
 								View Suppliers
 							</a>
 						</li>
@@ -94,33 +93,33 @@
 				</li>
 				<li>
 					<a href="/category/" id="category">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Categories</span>
 					</a>
 				</li>
 				<li>
 					<a href="../brand/" id="brand">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Brands</span>
 					</a>
 				</li>
 				<li>
 					<a class="sidebar-nav-menu" href="#">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>User</span>
 						<span class="glyphicon glyphicon-menu-right collapse-icon"></span>
 					</a>
 					<ul style="display: none">
 						<li>
-							<a href="/user/new-user.php" id="new-user">
+							<a href="#">
 								Add User
 							</a>
 						</li>
 						<li>
-							<a href="/user/view-user.php" id="view-user">
+							<a href="#">
 								View Users
 							</a>
 						</li>
@@ -128,43 +127,43 @@
 				</li>
 				<li>
 					<a href="#">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Form Components</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Mail</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Charts</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Maps</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Extra</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<!--<i class="glyphicon glyphicon-fire">
-						</i>-->
+						<i class="glyphicon glyphicon-fire">
+						</i>
 						<span>Login Page</span>
 					</a>
 				</li>
@@ -172,7 +171,7 @@
 		<!-- </div> -->
 	</div>
 	<div class="main-content" style="position: relative;z-index: -5">
-		<?php require_once('/view_user_content.php'); ?>
+		<?php require_once('/category_content.php'); ?>
 	</div>
 </div>
 <script type="text/javascript">
