@@ -25,12 +25,13 @@ a.sidebar-brand {
 	height: 80px;
 	display: block;
 	color: #fff;
-	background-color: #a52315;
+	background-color: #026464;
+	/*background-color: #a52315;*/
 	/*background: rgba(0,0,0,.15);*/
 	border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 a.sidebar-brand:focus, a.sidebar-brand:hover {
-	background-color: #be2717;/*#e74c3c;*/
+	background-color: #048585;/*#be2717;*//*#e74c3c;*/
 	color: #fff;
 	text-decoration: none;
 }
@@ -119,17 +120,23 @@ div.sidebar-toggle .fa-bars {
 }
 .nav.top-menu li a{
 	padding-top: 25px;
-	padding-right: 35px;
+	padding-right: 65px;
 	height: inherit;
 }
 .nav.top-menu li a span.username {
 	font-family: Cambria;
 	font-size: 16px;
 	color: #555555;
+	/* added in 04-21-17 */
+	/*position: relative;
+	top: -10px;*/
 }
 .nav.top-menu li a b.caret {
 	border-bottom-color: #A4AABA;
 	border-top-color: #A4AABA;
+	/* added in 04-21-17 */
+	/*position: relative;
+	top: -10px;*/
 }
 .nav.top-menu li a:hover b.caret, .nav li a:hover b.caret {
 	border-bottom-color: #000;

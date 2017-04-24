@@ -26,7 +26,7 @@
 		<ul class="nav top-menu pull-right">
 			<li>
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-					<img alt="" src="/contents/images/profile_pics/avatar1_small.jpg">
+					<!--<img alt="" src="/contents/images/profile_pics/avatar1_small.jpg">-->
 					<span class="username">John Doe</span>
 					<b class="caret"></b>
 				</a>
