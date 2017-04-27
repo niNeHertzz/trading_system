@@ -44,6 +44,10 @@
 					// 	 "</tr>";	
 				}
 			}
+			else
+			{
+				$output["result"] = "";
+			}
 			//echo $result->num_rows;
 			$result->free();
 			$mysqli->close();
@@ -132,7 +136,6 @@
 							$roleid_selected = $row["RoleId"];
 							
 						}
-						
 					}
 					$role_result->free();
 					// retrieve user id of user inserted
@@ -158,6 +161,43 @@
 					{
 						die('Error : ('. $mysqli->errno .') '. $mysqli->error);
 					}
+					// create directory for uploaded profile pictures
+					$curdir = getcwd();
+					$rootdir = substr($curdir,0,strlen($curdir)-5);
+					if(!file_exists($rootdir."/upload-images/profile-pics/".$uname))
+					{
+						mkdir($rootdir."/upload-images/profile-pics/".$uname);
+					}
+					// save image and its path
+					$up_default_path = $rootdir ."contents/images/profile_pics/";
+									 /*$rootdir."/upload-images/profile-pics/".$uname .
+										   "/def-prof-pic.jpg";*/
+					$default_image;
+					if ($gender == "Male") 
+					{
+						//copy($rootdir."/contents/images/profile_pics/default-profile-img-male.jpg",
+						//	 $up_default_path);
+						$default_image = "default-profile-img-male.jpg";
+					}
+					else if ($gender == "Female")
+					{
+						//copy($rootdir."/contents/images/profile_pics/default-profile-img-female.jpg",
+						//	 $up_default_path);
+						$default_image = "default-profile-img-female.jpg";
+					}
+					$insert_defaultpic_qry = "Update Users ".
+												 "Set ImageName = '". $default_image ."', ".
+												 "ImagePath = '".
+												 				  substr($up_default_path,
+												 						 strlen($rootdir), 
+																		 strlen($up_default_path)).
+																  $default_image . "' ".
+												 "Where Username = '". $uname . "'";
+					$insert_defaultpic_result = $mysqli->query($insert_defaultpic_qry);
+					if(!$insert_defaultpic_result)
+					{
+						die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+					}
 				}
 				$uname_exst_result->free();
 			}
@@ -165,52 +205,82 @@
 			$mysqli->close();
 		}
 
-		// get specific category function
+		// get specific user function
 		public function getUser() {
 			require("../connect_db.php");
-			$categoryid = htmlspecialchars($_GET['id']);
-			$select_qry = "Select Category from Categories ". 
-						   "Where CategoryId = ". $categoryid;
+			$username = htmlspecialchars($_POST['user']);
+			$selectid_qry = "Select UserId from users Where Username = '".$username."'";
+			$selectid_result = $mysqli->query($selectid_qry);
+			$selectid_row = $selectid_result->fetch_assoc();
+			
+
+			$select_qry = "Select Username, LastName, FirstName, MiddleName, ". 
+						  "Gender, BirthDate, Address, ".
+						  "ContactNo, Password, ImagePath, Role ".
+						  "from  UserPermission inner join Users ".
+						  "on UserPermission.UserId = Users.UserId Inner Join UserRoles ".
+						  "on UserPermission.RoleId = UserRoles.RoleId ". 
+						  "Where Users.UserId = ". $selectid_row["UserId"];
+						  
+			
 			$result = $mysqli->query($select_qry);
 			if($result->num_rows > 0)
 			{
-				while($row = $result->fetch_assoc())
-				{
-					echo $row["Category"];
-				}
-			}
+				$rows = $result->fetch_assoc();
+			} 
 			$result->free();
 			$mysqli->close();
+			$users_data = json_encode($rows);
+			return $users_data;
 		}
-
 		// update category function
 		public function updateUser() {
 			require("../connect_db.php");
-			$categoryid = $mysqli->real_escape_string($_POST['categoryid']);
-			$category = $mysqli->real_escape_string($_POST['categorytxt']);
-
-			// check if existing
-			$check_category_exst = "Select *from Categories ".
-								   "Where Category = '". $category . "'";
-			$checking_result = $mysqli->query($check_category_exst);
+			$uname = $mysqli->real_escape_string($_POST['un']);
+			$pword = $mysqli->real_escape_string($_POST['pwordtxt']);
+			$lname = $mysqli->real_escape_string($_POST['lnametxt']);
+			$fname = $mysqli->real_escape_string($_POST['fnametxt']);
+			$mname = $mysqli->real_escape_string($_POST['mnametxt']);
+			$gender = $mysqli->real_escape_string($_POST['gender']);
 			
-			if ($checking_result->num_rows > 0)
+			$date_create = date_create($_POST['bdatetxt']);
+			$bdate_format = date_format($date_create, "Y-m-d");
+			$bdate = $mysqli->real_escape_string($bdate_format);
+			$address = $mysqli->real_escape_string($_POST['addresstxt']);
+			$contactno = $mysqli->real_escape_string($_POST['contacttxt']);
+
+			$user_exst_qry = "Select *from Users ".
+							 "Where LastName = '". $lname . "'".
+							 " AND FirstName = '". $fname . "'".
+							 " AND MiddleName = '". $mname. "'".
+							 " AND BirthDate = '". $bdate . "'".
+							 " AND Username = '". $uname ."'";
+			// check if existing
+			$user_exst_result = $mysqli->query($user_exst_qry);
+			
+			if ($user_exst_result->num_rows > 0)
 			{
-				echo "The category you entered was already existing.";
+				echo "The user you entered was already existing.";
 			}
 			else
 			{
 				// update current category selected in db
-				$update_qry = "Update Categories ".
-						  "Set Category = '". $category . "' ".
-						  "Where CategoryId = ". $categoryid;
+				$update_qry = "Update Users ".
+						  "Set LastName = '". $lname . "', ".
+						  "FirstName = '". $fname . "', ".
+						  "MiddleName = '". $mname . "', ".
+						  "Gender = '". $gender . "', ".
+						  "BirthDate = '". $bdate ."', ".
+						  "Address = '". $address ."', ".
+						  "ContactNo = '". $contactno ."', ".
+						  "Where Username = ". $uname;
 				$result = $mysqli->query($update_qry);
 				if(!$result)
 				{
 					die('Error : ('. $mysqli->errno .') '. $mysqli->error);
 				}
 			}
-			$checking_result->free();
+			$user_exst_result->free();
 			$mysqli->close();
 		}
 
