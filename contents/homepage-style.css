@@ -17,6 +17,9 @@ body{
 	width:inherit;
 	color: #fff;
 }
+.navbar-default {
+	border-left-color: #fff;
+}
 a.sidebar-brand {
 	font-family: Calibri;
 	font-size: 19px;
@@ -24,15 +27,16 @@ a.sidebar-brand {
 	padding:25px 27px;
 	height: 80px;
 	display: block;
-	color: #fff;
-	background-color: #026464;
+	color: #000;
+	background-color: #fff;
+	/*background-color: #026464;*/
 	/*background-color: #a52315;*/
 	/*background: rgba(0,0,0,.15);*/
 	border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 a.sidebar-brand:focus, a.sidebar-brand:hover {
-	background-color: #048585;/*#be2717;*//*#e74c3c;*/
-	color: #fff;
+	background-color: #fff;/*#048585;*//*#be2717;*//*#e74c3c;*/
+	color: #000;
 	text-decoration: none;
 }
 a.sidebar-brand img {
