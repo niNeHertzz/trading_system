@@ -1,0 +1,60 @@
+
+.update-user-contents .panel {
+	/*border: none;
+	box-shadow: none;*/
+}
+.update-user-contents .panel .panel-heading {
+	/* updated bg since 04-20-17 */
+	background: #c1c0c0; /*#cdcdcd;*//*#fafafa;*/
+	font-size: 13px;
+	font-weight: 400;
+}
+.update-user-contents .panel .panel-heading h4 {  
+	font-size: 19px;
+	/* added since 04-20-17 */
+	color: #474646;/*#303030;*/ /*#212121;*/ /*#767676;*/
+	font-family: calibri;
+	font-weight: bold;
+}
+.form-control {
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.update-user-contents .panel .user-form-panel button#signup-btn {
+	Background: #1a9287 none repeat scroll 0 0;
+	Color: #fff; 
+	
+	border: 0 none;
+	border-radius: 2px;
+	Box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	cursor: pointer;
+	outline: medium none !important;
+	padding: 9px 15px;
+	position: relative;
+	text-decoration: none;
+	transition: all 0.2s ease-out 0s;
+}
+
+.update-user-contents .panel .user-form-panel button#signup-btn:hover, 
+.update-user-contents .panel .user-form-panel button#signup-btn:focus {
+	background-color: #1da89b !important;
+	color: #fff !important;
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.update-user-contents .panel .user-form-panel button.btn-custom {
+	Box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	border: 0 none;
+	border-radius: 2px;
+	cursor: pointer;
+	outline: medium none !important;
+	padding: 9px 15px;
+	position: relative;
+	text-decoration: none;
+	transition: all 0.2s ease-out 0s;
+}
+
+
+
