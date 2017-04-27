@@ -21,7 +21,8 @@
 			</h4>
 		</header>
 		<div class="panel-body user-table-panel">
-			<table id="user-table" class="table table-striped table-bordered" width="100%" cellspacing="0">
+			<table id="user-table" class="table table-striped table-bordered" 
+			 cellspacing="0">
 				<thead>
 					<tr>
 						<th>
@@ -50,38 +51,53 @@
 						$user = new User();
 						//$user->getUserAll();
 						$array_output = json_decode($user->getUserAll());
-						foreach($array_output as $user_data)
+						//echo count($array_output);
+						//echo key($array_output);
+						if (key($array_output) !== "result")
 						{
-							echo "<tr>";
-							echo "<td>".
-							 	 	"<input type='checkbox'". 
-									"name='check_". $user_data->Username. "'". "/>".
-								 "</td>";
-							echo "<td>".
-								 	$user_data->Username. 
-								 "</td>";
-							echo "<td>".
-									$user_data->LastName. ", ". $user_data->FirstName. " ". $user_data->MiddleName. 
-								 "</td>";
-							echo "<td>".
-									$user_data->Address. 
-								 "</td>";
-							echo "<td>".
-									$user_data->BirthDate. 
-								 "</td>";
-							echo "<td>".
-									$user_data->ContactNo. 
-								 "</td>";
-							echo "<td>".
-								 "<form id='update-usr-frm' method='post' action='/user/update-user.php'>".
-								 	"<button type='button'". "id='". $user_data->Username . 
-								 	"' name='Update'". "value=''". 
-						 		 	"class='btn btn-success'>".
-										"Update".
-									"</button>".
-								 "</form>".
-								 "</td>";
-							echo "</tr>";
+							foreach($array_output as $user_data)
+							{
+								echo "<tr>";
+								echo "<td>".
+										"<input type='checkbox'". 
+										"name='check_". $user_data->Username. "'". "/>".
+									"</td>";
+								echo "<td>".
+										$user_data->Username. 
+									"</td>";
+								echo "<td>".
+										$user_data->LastName. ", ". $user_data->FirstName. " ". $user_data->MiddleName. 
+									"</td>";
+								echo "<td>".
+										$user_data->Address. 
+									"</td>";
+								echo "<td>".
+										$user_data->BirthDate. 
+									"</td>";
+								echo "<td>".
+										$user_data->ContactNo. 
+									"</td>";
+								echo "<td>". 
+									"<form id='update-usr-frm' method='post' action='/user/update-user.php'>".
+										"<button type='button'". "id='". $user_data->Username . 
+										"' name='Update'". "value=''". 
+										"class='btn btn-success'". "style='display:block;margin-bottom:10px;margin-top:10px;'>".
+											"Update Info".
+										"</button>".
+										"<button type='button'". "id='". $user_data->Username . 
+										"' name='ChangePass'". "value=''". 
+										"class='btn btn-success'". "style='display:block;margin-bottom:10px;'>".
+											"Update Password".
+										"</button>".
+										"<button type='button'". "id='". $user_data->Username . 
+										"' name='ChangeRole'". "value=''". 
+										"class='btn btn-success'". "style='display:block;margin-bottom:10px;'>".
+											"Update Role".
+										"</button>".
+									"</form>".
+									"</td>";
+								echo "</tr>";
+							}
 						}
 					?>
 				</tbody>
@@ -105,15 +121,19 @@
 			"iDisplayLength": 5
 		});
 		var brow_height = $(window).height();
+		var brow_width = $(window).width();
 		//alert(brow_height + "g");
 		// firefox browser with 768 reso in 18 inch computer
 		var usertblscroll_height;
 		usertblscroll_height = brow_height - 169;
+		usertblscroll_width = brow_width - 288;
 		$(".user-table-panel").slimscroll({
+			axis:'both',
 			wheelStep: 300,
 			height: '480px'
 		});
 		$(".slimScrollDiv").css("height", usertblscroll_height);
 		$(".user-table-panel").css("height", usertblscroll_height);
+		//$(".slimScrollBarY").css("width",'778px');
 	});
 </script>
