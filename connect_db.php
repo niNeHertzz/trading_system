@@ -11,6 +11,8 @@
 		$database = 'simkimban_dev';
 		//$output["Username"] = "Unable to Connect";
 		$mysqli = new mysqli($host, $dbuser, $dbpass, $database);
+		// for saving ñ to database not different character
+		$mysqli->set_charset("utf8");
 		if($mysqli->connect_error)
 		{
 			die(json_encode("Unable to Connect"));
